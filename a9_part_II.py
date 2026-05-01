@@ -61,26 +61,26 @@ if __name__ == "__main__":
     # print('\n<<<< Running asserts, this might take a sec >>>>')
     # assert get_planet_radius("Mars") == "3376.2", "Incorrect radius for Mars"
     # assert get_planet_radius("Earth") == "6356.752", "Incorrect radius for Earth"
-    # assert get_planet_radius("Jupiter") == "66854", "Incorrect radius for Jupiter"
+    # assert get_planet_radius("Jupiter") == "66842", "Incorrect radius for Jupiter"
     # assert get_planet_radius("Saturn") == "54364", "Incorrect radius for Saturn"
     # print('\n<<<< Planet radius tests passed >>>>')
 
     print("\n<<<<<<<<<<<<<< Testing Birth Dates >>>>>>>>>>>>>>")
     # should be 1906-12-09
-    print(format_birth(get_birth_date("Grace Hopper"), "Grace Hopper"))
+    print(get_birth_date("Grace Hopper"), "Grace Hopper")
     # should be 1912-06-23
-    print(format_birth(get_birth_date("Alan Turing"), "Alan Turing"))
+    print(get_birth_date("Alan Turing"), "Alan Turing")
     # should be 1955-06-08
-    print(format_birth(get_birth_date("Tim Berners-Lee"), "Tim Berners-Lee"))
+    print(get_birth_date("Tim Berners-Lee"), "Tim Berners-Lee")
     # should be 1949-01-17
-    print(format_birth(get_birth_date("Anita Borg"), "Anita Borg"))
+    print(get_birth_date("Anita Borg"), "Anita Borg")
 
     # uncomment below lines for tests once you think you're getting the right output
     # print('\n<<<< Running asserts, this might take a sec >>>>')
-    # assert get_birth_date("Grace Hopper") == "1906-12-09", "Incorrect birth date for Grace Hopper"
-    # assert get_birth_date("Alan Turing") == "1912-06-23", "Incorrect birth date for Alan Turing"
-    # assert get_birth_date("Tim Berners-Lee") == "1955-06-08", "Incorrect birth date for Tim Berners-Lee"
-    # assert get_birth_date("Anita Borg") == "1949-01-17", "Incorrect birth date for Anita Borg"
-    # print('\n<<<< Birth date tests passed >>>>')
+    assert get_birth_date("Grace Hopper") == "1906-12-09", "Incorrect birth date for Grace Hopper"
+    assert get_birth_date("Alan Turing") == "1912-06-23", "Incorrect birth date for Alan Turing"
+    assert get_birth_date("Tim Berners-Lee") == "1955-06-08", "Incorrect birth date for Tim Berners-Lee"
+    assert get_birth_date("Anita Borg") == "1949-01-17", "Incorrect birth date for Anita Borg"
+    print('\n<<<< Birth date tests passed >>>>')
 
-    # print('\n<<<< All tests passed! >>>>')
+    print('\n<<<< All tests passed! >>>>')
