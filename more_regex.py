@@ -9,14 +9,14 @@ import re
 # should extract a match where the first group is the username, the second group is the domain
 # and the third group is the top-level domain (com, edu, org, etc.)
 email_string = "student123@university.edu"
-pat = re.compile("REPLACE ME", re.IGNORECASE)
+pat = re.compile("(?P<username>\w+)@(?P<domain>\w+).(?P<tld>\w+)", re.IGNORECASE)
 email_matches = pat.match(email_string)
 
 # problem 2
 # should extract a match where the first group is the hour, the second group is the minutes,
 # and the third group is AM or PM (if present)
 time_string = "3:45 PM"
-pat = re.compile("REPLACE ME", re.IGNORECASE)
+pat = re.compile("(?P<hour>\d):(?P<minutes>\d+) (?P<period>\w+)", re.IGNORECASE)
 time_matches = pat.match(time_string)
 
 # problem 3
@@ -42,23 +42,23 @@ phone_matches = pat.findall(contact_string)
 if __name__ == "__main__":
     print("<<<<< Email Problem >>>>>\n")
     # uncomment the following prints to see email results and asserts to test
-    # print(f"username is: {email_matches.group(1)}!") # should print "username is: student123"
-    # print(f"domain is: {email_matches.group(2)}!")   # should print "domain is: university"
-    # print(f"tld is: {email_matches.group(3)}!")      # should print "tld is: edu"
-    # assert email_matches.group(1) == 'student123', "Incorrect username"
-    # assert email_matches.group(2) == 'university', "Incorrect domain"
-    # assert email_matches.group(3) == 'edu', "Incorrect top-level domain"
-    # print('\n<<<< Email extraction tests passed >>>>\n')
+    print(f"username is: {email_matches.group(1)}!") # should print "username is: student123"
+    print(f"domain is: {email_matches.group(2)}!")   # should print "domain is: university"
+    print(f"tld is: {email_matches.group(3)}!")      # should print "tld is: edu"
+    assert email_matches.group(1) == 'student123', "Incorrect username"
+    assert email_matches.group(2) == 'university', "Incorrect domain"
+    assert email_matches.group(3) == 'edu', "Incorrect top-level domain"
+    print('\n<<<< Email extraction tests passed >>>>\n')
 
     print("<<<<< Time Problem >>>>>\n")
     # uncomment the following prints to see time results and asserts to test
-    # print(f"hour is: {time_matches.group(1)}!")      # should print "hour is: 3"
-    # print(f"minutes is: {time_matches.group(2)}!")   # should print "minutes is: 45"
-    # print(f"period is: {time_matches.group(3)}!")    # should print "period is: PM"
-    # assert time_matches.group(1) == '3', "Incorrect hour"
-    # assert time_matches.group(2) == '45', "Incorrect minutes"
-    # assert time_matches.group(3) == 'PM', "Incorrect period"
-    # print('\n<<<< Time extraction tests passed >>>>\n')
+    print(f"hour is: {time_matches.group(1)}!")      # should print "hour is: 3"
+    print(f"minutes is: {time_matches.group(2)}!")   # should print "minutes is: 45"
+    print(f"period is: {time_matches.group(3)}!")    # should print "period is: PM"
+    assert time_matches.group(1) == '3', "Incorrect hour"
+    assert time_matches.group(2) == '45', "Incorrect minutes"
+    assert time_matches.group(3) == 'PM', "Incorrect period"
+    print('\n<<<< Time extraction tests passed >>>>\n')
 
     print("<<<<< Word Problem >>>>>\n")
     # uncomment the following prints to see results and asserts to test
